@@ -1,0 +1,29 @@
+{
+  "name": "fs-gen-web",
+  "version": "1.0.0",
+  "description": "Generate File archives online and download them as ZIP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBTopZZZ-LG/fs-gen-web-node.git"
+  },
+  "keywords": [
+    "file-system",
+    "fs",
+    "files",
+    "file",
+    "io",
+    "storage",
+    "archive",
+    "zip"
+  ],
+  "author": "SBTopZZZ-LG",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SBTopZZZ-LG/fs-gen-web-node/issues"
+  },
+  "homepage": "https://github.com/SBTopZZZ-LG/fs-gen-web-node#readme"
+}
