@@ -5,6 +5,8 @@ const {
 	validationErrorHandler,
 } = require("../middlewares/validation_error_handler");
 
+const FsControllers = require("../controllers/fs");
+
 const router = express.Router();
 
 /**
@@ -80,6 +82,11 @@ const createRouteValidationChain = [
 			message: "Payload content must be a string",
 		}),
 ];
-router.post("/", createRouteValidationChain, validationErrorHandler);
+router.post(
+	"/",
+	createRouteValidationChain,
+	validationErrorHandler,
+	FsControllers.fsCreate
+);
 
 module.exports = router;
