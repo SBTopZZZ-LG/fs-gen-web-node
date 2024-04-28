@@ -1,6 +1,6 @@
 /**
- * @param {{ success: boolean, status: { code: "string", message: "string" } | undefined, data: object | null }} Options
- * @returns {{ success: boolean, status: { code: "string", message: "string" }, data: object | null }}
+ * @param {{ success: boolean, status: { code: string, message: string } | undefined, data: object | null }} Options
+ * @returns {{ success: boolean, status: { code: string, message: string }, data: object | null }}
  */
 function createApiResponse({ success, status = undefined, data = null }) {
 	if (status === undefined) {
