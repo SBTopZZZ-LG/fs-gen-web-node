@@ -5,7 +5,7 @@ const DOCUMENT_VALIDITY_IN_SECONDS = 600;
 const schema = new mongoose.Schema(
 	{
 		data: {
-			type: mongoose.Types.Buffer,
+			type: Buffer,
 			required: true,
 		},
 		expiresAfter: {
