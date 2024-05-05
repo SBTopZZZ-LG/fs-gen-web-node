@@ -94,7 +94,28 @@ class FsControllers {
 
 	static async fsGetById(req, res) {
 		try {
-			res.status(200).send(createApiResponse({ success: true }));
+			const { id } = req.params;
+
+			const archive = await Archive.findById(id);
+
+			if (archive === null) {
+				res.status(404).send(
+					createApiResponse({
+						success: false,
+						status: {
+							code: "archiveNotFound",
+							message: "Archive with specified id was not found",
+						},
+					})
+				);
+				return;
+			}
+
+			const bufferLength = archive.data.length;
+			res.set("Content-Type", "application/zip");
+			res.set("Content-Length", bufferLength);
+
+			res.status(200).send(archive.data);
 		} catch (error) {
 			const errorMessage = error?.message ?? "Unknown error occurred";
 			res.status(500).send(
