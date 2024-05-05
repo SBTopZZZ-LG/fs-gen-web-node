@@ -1,5 +1,5 @@
 const express = require("express");
-const { body } = require("express-validator");
+const { param, body } = require("express-validator");
 
 const {
 	validationErrorHandler,
@@ -87,6 +87,26 @@ router.post(
 	createRouteValidationChain,
 	validationErrorHandler,
 	FsControllers.fsCreate
+);
+
+const getByIdRouteValidationChain = [
+	param("id")
+		.exists()
+		.withMessage({
+			code: "idPathParamRequired",
+			message: "Missing id path parameter",
+		})
+		.isMongoId()
+		.withMessage({
+			code: "invalidIdPathParam",
+			message: "Id path parameter must be a valid Archive id",
+		}),
+];
+router.get(
+	"/:id",
+	getByIdRouteValidationChain,
+	validationErrorHandler,
+	FsControllers.fsGetById
 );
 
 module.exports = router;
