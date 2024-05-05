@@ -28,10 +28,12 @@
   },
   "homepage": "https://github.com/SBTopZZZ-LG/fs-gen-web-node#readme",
   "dependencies": {
+    "archiver": "^7.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-validator": "^7.0.1",
+    "memfs": "^4.9.2",
     "mongoose": "^8.3.3"
   }
 }
