@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const fsRoute = require("../routes/fs");
+const privacyRoute = require("../routes/privacy");
 
 const { PORT, ALLOWED_ORIGINS } = process.env;
 
@@ -17,5 +18,6 @@ function appListenCallback() {
 }
 
 app.use("/api/v1/fs", fsRoute);
+app.use("/privacy", privacyRoute);
 
 app.listen(PORT, appListenCallback);
